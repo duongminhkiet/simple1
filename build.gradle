@@ -1,0 +1,20 @@
+apply plugin: 'java' 
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+jar {
+    baseName = 'name_of_lib'
+    version =  '0.1.0'
+}
+dependencies {
+    compile "joda-time:joda-time:2.2"
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
+
+apply plugin: 'application'
+
+mainClassName = 'hello.HelloWorld'
+
